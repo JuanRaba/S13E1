@@ -8,6 +8,10 @@ class SalesController < ApplicationController
     @sale = Sale.find(params[:id])
   end
 
+  def edit
+    @sale = Sale.find(params[:id])
+  end
+
   def new
     @sale = Sale.new
   end
