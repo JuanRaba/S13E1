@@ -1,25 +1,21 @@
 class SalesController < ApplicationController
-
+  before_action :find_post, only: [:show, :edit, :update, :destroy]
   def index
     @sales = Sale.all
   end
 
   def show
-    @sale = Sale.find(params[:id])
   end
 
   def edit
-    @sale = Sale.find(params[:id])
   end
 
   def destroy
-    @sale = Sale.find(params[:id])
     @sale.destroy
     redirect_to sales_path
   end
 
   def update
-    @sale = Sale.find(params[:id])
     @sale.update(sale_params)
     redirect_to sales_path
   end
@@ -38,5 +34,8 @@ class SalesController < ApplicationController
 
   def sale_params
     params.require(:sale).permit(:detail, :category, :value, :discount, :tax)
+  end
+  def find_post
+    @sale = Sale.find(params[:id])
   end
 end

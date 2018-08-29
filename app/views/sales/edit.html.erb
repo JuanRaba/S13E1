@@ -1,28 +1,4 @@
-<h1>Sales#new</h1>
-<p>Find me in app/views/sales/new.html.erb</p>
+<h1>Sales#edit</h1>
+<p>Find me in app/views/sales/edit.html.erb</p>
 
-<%= form_with model: @sale, local: true do |f| %>
-<ul>
-  <li>
-  <%= f.label :detail %>
-  <%= f.text_area :detail %>
-  </li>
-  <li>
-  <%= f.label :category %>
-  <%= f.text_field :category %>
-  </li>
-  <li>
-  <%= f.label :value %>
-  <%= f.number_field :value  %>
-  </li>
-  <li>
-  <%= f.label :discount %>
-  <%= f.number_field :discount  %>
-  </li>
-  <li>
-  <%= f.label :tax %>
-  <%= f.check_box :tax  %>
-  </li>
-  <%= f.submit "Enviar" %>
-</ul>
-<% end %>
+<%= render 'form' %>
