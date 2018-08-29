@@ -1,6 +1,10 @@
 <%= form_with model: @sale, local: true do |f| %>
 <ul>
   <li>
+  <%= f.label :cod %>
+  <%= f.number_field :cod %>
+  </li>
+  <li>
   <%= f.label :detail %>
   <%= f.text_area :detail %>
   </li>
