@@ -1,0 +1,12 @@
+
+<h1>SALES</h1>
+<ol>
+<% @sales.each do |sale| %>
+  <li>  
+    <ul>
+      <li> cod <%= sale.cod %> </li>
+      <li> tax <%= sale.tax %> </li>
+    </ul>
+  </li>
+<% end %>
+</ol>

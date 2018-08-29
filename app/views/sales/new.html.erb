@@ -1,7 +1,7 @@
 <h1>Sales#new</h1>
 <p>Find me in app/views/sales/new.html.erb</p>
 
-<%= form_with model: Sale.new do |f| %>
+<%= form_with model: @sale, local: true do |f| %>
 <ul>
   <li>
   <%= f.label :detail %>

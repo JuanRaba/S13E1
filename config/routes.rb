@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sales', to: 'sales#index'
   get 'sales/new'
   post 'sales', to: 'sales#create'
   root 'sales#new'
