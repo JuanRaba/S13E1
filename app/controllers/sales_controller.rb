@@ -12,6 +12,12 @@ class SalesController < ApplicationController
     @sale = Sale.find(params[:id])
   end
 
+  def update
+    @sale = Sale.find(params[:id])
+    @sale.update(sale_params)
+    redirect_to sales_path
+  end
+
   def new
     @sale = Sale.new
   end
