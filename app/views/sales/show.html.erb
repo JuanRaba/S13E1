@@ -2,4 +2,5 @@
   <li> cod <%= @sale.cod %> </li>
   <li> tax <%= @sale.tax %> </li>
   <li> creado hace: <%= time_ago_in_words @sale.created_at %> </li>
+  <li> <%= link_to "Borrar", @sale, method: :delete %> </li>
 </ul>
