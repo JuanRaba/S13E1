@@ -1,9 +1,11 @@
 class Sale < ApplicationRecord
   validates :cod, uniqueness: true
   validates :detail, presence: true
- %% validates :category, inclusion: {
-    in: ["uno", "dos", "tres", "cuatro", "cinco"]
-  }%
+  validates :category, numericality: {
+    only_integer: true,
+    greater_than_or_equal_to: 1,
+    less_than_or_equal_to: 5
+  }
   validates :value, numericality: {
     only_integer: true,
     greater_than_or_equal_to: 0

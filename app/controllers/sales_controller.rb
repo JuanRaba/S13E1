@@ -27,8 +27,11 @@ class SalesController < ApplicationController
   def create
     @sale = Sale.new(sale_params)
     calculate_total
-    @sale.save
-    redirect_to @sale, method: :get
+    if @sale.save
+      redirect_to @sale, method: :get
+    else
+      redirect_to sales_new_path
+    end
   end
 
   private
@@ -42,7 +45,7 @@ class SalesController < ApplicationController
   end
 
   def calculate_total
-    @sale.total = (@sale.value * 100 - @sale.discount) / 100.0
+    @sale.total = (@sale.value * 100 - @sale.discount) / 100.0 if @sale.value and @sale.discount
     @sale.total *= 1.19 if @sale.tax != 0
   end
 end
